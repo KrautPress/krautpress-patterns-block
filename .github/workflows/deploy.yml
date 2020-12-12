@@ -1,0 +1,42 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Release asset creation
+
+on:
+  release:
+    types:
+      - created
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  deploy:
+    name: Create release asset
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - name: Install dependencies
+      run: |
+        npm install --silent
+        npm run build:production
+    - name: Create release ZIP
+      run: |
+        mkdir -p krautpress-patterns-block
+        rsync -rav --exclude-from='.rsync-exclude' --delete-excluded ./ krautpress-patterns-block
+        zip -r krautpress-patterns-block.zip krautpress-patterns-block/
+        rm -rf krautpress-patterns-block
+    - name: Get Release
+      id: get_release
+      uses: bruceadams/get-release@v1.2.0
+    - name: Upload ZIP to release
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.get_release.outputs.upload_url }}
+        asset_path: ./krautpress-patterns-block.zip
+        asset_name: krautpress-patterns-block.zip
+        asset_content_type: application/zip

@@ -1,0 +1,7 @@
+- .git/
+- node_modules/
+- krautpress-patterns-block/
+- src/
+- package.json
+- package-lock.json
+- .*
