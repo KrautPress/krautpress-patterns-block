@@ -1,0 +1,49 @@
+.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker .components-placeholder__fieldset {
+	max-width: 100%;
+}
+
+.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations {
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations::after {
+	content: '';
+	flex-grow: 1;
+	display: block;
+}
+
+.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations li {
+	position: relative;
+	margin-top: 1.5em;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	padding-right: 0.25em;
+	padding-left: 0.25em;
+	width: calc(50% - 1em);
+	max-width: none;
+}
+
+@media screen and (min-width: 35em) {
+	.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations li {
+		width: calc(33% - 1em);
+	}
+}
+
+@media screen and (min-width: 43em) {
+	.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations li {
+		width: calc(25% - 1em);
+	}
+}
+
+.wp-block[data-type="krautpress/patterns"] .block-editor-block-variation-picker__variations button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	border: none;
+	box-shadow: none;
+}
