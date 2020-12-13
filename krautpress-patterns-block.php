@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:     Block patterns block.
- * Description:     A block that allows inserting block patterns.
- * Version:         0.1.0
+ * Plugin Name:     Patterns block
+ * Description:     A block for faster inserting of block patterns.
+ * Version:         1.0.0
  * Author:          Florian Brinkmann
  * License:         GPL-3.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-3.0
