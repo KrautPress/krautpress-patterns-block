@@ -11,6 +11,8 @@ Plugin that adds a block with variations for the registered block patterns in yo
 
 When inserting the *Patterns* block, you can select the pattern you want from a list of all patterns.
 
+[Plugin development happens on GitHub](https://github.com/KrautPress/krautpress-patterns-block/)
+
 = Filters =
 
 The plugin has two filters:
