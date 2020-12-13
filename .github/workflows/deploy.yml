@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm install --silent
-        npm run build:production
+        npm run build
     - name: Create release ZIP
       run: |
         mkdir -p krautpress-patterns-block
